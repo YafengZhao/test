@@ -3,4 +3,6 @@ tags
 *.o 
 *.class
 *.so
-
+a.out
+/cplus/TestCplus/build/
+/cplus/TestCplus/dist/
