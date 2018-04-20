@@ -17,9 +17,12 @@
 #include <typeinfo>
 #include <cstring>
 #include <memory>
+#include <vector>
+#include <tuple>
+#include <set>
 
 #include "sizeof.h"
-
+#include "template.h"
 using namespace std;
 
 /*
@@ -43,6 +46,22 @@ const std::size_t arraySize(T (&)[N])
     return N;
 }    
 
+class A {
+public:
+    A() {
+    
+        std::cout << "Call no parameter constructor ..." << std::endl;
+    }
+    A(int a, bool b){ 
+    
+        std::cout << "Call A constructor ..." << std::endl;
+    }
+    
+    A(std::initializer_list<int> lb) {
+    
+        std::cout << "A initializer list constructor ..." << std::endl;
+    }
+};
 template <class T>
 void show(T &&arg)
 {
@@ -58,6 +77,27 @@ void printReference2 (std::string && str)
 {
     std::cout << str;
 }
+
+void TestDelete(int a) {
+    std::cout << "Test delete ..." << std::endl;
+
+}
+
+void TestDelete( std::string &a) = delete;
+
+
+
+void f(int n){
+    
+    std::cout << "Call function int ...";
+}
+
+void f(void *p) {
+ 
+    std::cout << "Call function void * ..." << std::endl;
+}
+
+using Pfun = void (*)(int, std::string);
 
 int main(int argc, char** argv) {
 
@@ -110,6 +150,34 @@ int main(int argc, char** argv) {
     int mm = 0;
     std::cout << typeid(decltype(mm)).name() << std::endl;
     
+    std::string sssstr{};
+
+    A a{};
+    A aa{10, 1, 100};
+
+    A aaa({});
+    A a4{{}};
+    
+    f(0);
+    f(nullptr);
+    //f(NULL);wrong
+    
+    Pfun *fp;
+    
+    tprint(t);
+    
+    std::string temp("hello");
+    tprint(temp.begin(), temp.end());
+
+    std::remove_reference<int>::type tt = t;
+    
+   std::tuple<int, std::string, float> infos;
+   std::get<1>(infos);
+   //auto arg = std::get<1>(infos);
+    //tprint(arg);
+   
+   TestDelete(10);
+   //TestDelete("233");
     return 0;
 }
 

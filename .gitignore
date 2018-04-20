@@ -4,5 +4,8 @@ tags
 *.class
 *.so
 a.out
+*.a 
+.ycm_extra_conf.py
 /cplus/TestCplus/build/
 /cplus/TestCplus/dist/
+/cplus/TestCplus/nbproject/

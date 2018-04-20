@@ -5,6 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>sizeof.h</itemPath>
+      <itemPath>template.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -47,6 +48,8 @@
       </item>
       <item path="sizeof.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="template.h" ex="false" tool="3" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
@@ -73,6 +76,8 @@
       <item path="sizeof.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sizeof.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="template.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
