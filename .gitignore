@@ -9,3 +9,5 @@ a.out
 /cplus/TestCplus/build/
 /cplus/TestCplus/dist/
 /cplus/TestCplus/nbproject/
+*.jar
+*.class
