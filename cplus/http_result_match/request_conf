@@ -1,0 +1,7 @@
+http://127.0.0.1:8888/geoserver/geowave/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geowave:geolifepoint&maxFeatures=50&Filter=
+<Filter>
+  <PropertyIsLessThan>
+     <PropertyName>Timestamp</PropertyName>
+     <Literal>2008-10-23T02:55:25</Literal>
+  </PropertyIsLessThan>
+</Filter>
